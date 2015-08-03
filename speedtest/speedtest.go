@@ -1,4 +1,4 @@
-package go_speedtest
+package speedtest
 
 import (
 	"io/ioutil"
