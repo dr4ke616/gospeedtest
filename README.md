@@ -1,6 +1,8 @@
 # Go Speedtest
 Simple internet speedtest written in Go for Android
 
+![Android & Go image](doc/android_go.png)
+
 
 ## Go Speedtest
 1. Download go1.5beta2 [here](https://golang.org/dl/)
