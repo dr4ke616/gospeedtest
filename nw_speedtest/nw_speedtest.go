@@ -1,4 +1,4 @@
-package speedtest
+package nw_speedtest
 
 import (
 	"io/ioutil"
@@ -60,10 +60,11 @@ func (s *Speedtest) CalculateRate(data_size int, t1 time.Time, t2 time.Time) int
 	return size_magabits / elapsed_second_time
 }
 
-func (s *Speedtest) Start() int {
+func (s *Speedtest) Start() (int, error) {
 	req, err := s.MakeRequest()
 	if err != nil {
 		log.Fatalln(err)
+		return -1, err
 	}
 
 	client := &http.Client{}
@@ -72,11 +73,12 @@ func (s *Speedtest) Start() int {
 	rate, err = s.RunSpeedtest(req, client)
 	if err != nil || rate == -1 {
 		log.Fatalln(err)
+		return -1, err
 	}
 
 	if s.Verbos {
 		log.Printf("The download rate is %d Mbps.\n", rate)
 	}
 
-	return rate
+	return rate, nil
 }
