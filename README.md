@@ -1,5 +1,5 @@
 # Go Speedtest
-Simple internet speediest written in Go
+Simple internet speedtest written in Go
 
 
 ## Go Speedtest
@@ -15,7 +15,9 @@ go get golang.org/x/mobile/cmd/gomobile
 ```
 
 Build my speedtest app
+```bash
 ANDROID_HOME="/home/adam/Android/Sdk/" gomobile bind github.com/dr4ke616/gospeedtest
+```
 
 
 ## Problems
@@ -25,3 +27,13 @@ gomobile: type net/http.Request not defined in package package nw_speedtest ("gi
 type net/http.Request not defined in package package nw_speedtest ("github.com/dr4ke616/gospeedtest/nw_speedtest")
 type net/http.Client not defined in package package nw_speedtest ("github.com/dr4ke616/gospeedtest/nw_speedtest")
 ```
+
+
+## TODO
+Either:
+- Fix or wait for a release to fix the issue with gomobile so i can complete the binding process
+- Understand OpenGL and print the results on the screen, without the need to bind to Android/iOS project
+
+
+## Links
+http://www.sajalkayan.com/post/android-apps-golang.html
