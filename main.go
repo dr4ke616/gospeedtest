@@ -39,14 +39,7 @@ import (
 	"github.com/dr4ke616/gospeedtest/nw_speedtest"
 )
 
-var (
-	program      gl.Program
-	position     gl.Attrib
-	offset       gl.Uniform
-	screen_color gl.Uniform
-
-	speed_rate = make(chan int)
-)
+var speed_rate = make(chan int)
 
 func main() {
 	// check network speed runs only once when the app first loads.
