@@ -1,5 +1,5 @@
 # Go Speedtest
-Simple internet speedtest written in Go
+Simple internet speedtest written in Go for Android
 
 
 ## Go Speedtest
@@ -7,32 +7,35 @@ Simple internet speedtest written in Go
 
 2. Install Gomobile using go1.5beta2. This is a temp install of GoBeta, didnt want to mess up my current env
 ```bash
-export PATH=/home/adam/Downloads/gobeta/bin/:$PATH
-export PATH=/home/adam/Downloads/gobeta/temp_path/bin/:$PATH
-export GOPATH=/home/adam/Downloads/gobeta/temp_path/
-export GOROOT=/home/adam/Downloads/gobeta/
-go get golang.org/x/mobile/cmd/gomobile
+$ export PATH=/home/adam/Downloads/gobeta/bin/:$PATH
+$ export PATH=/home/adam/Downloads/gobeta/temp_path/bin/:$PATH
+$ export GOPATH=/home/adam/Downloads/gobeta/temp_path/
+$ export GOROOT=/home/adam/Downloads/gobeta/
+$ go get golang.org/x/mobile/cmd/gomobile
 ```
 
-Build my speedtest app
+Build my speedtest app and create an APK
 ```bash
-ANDROID_HOME="/home/adam/Android/Sdk/" gomobile bind github.com/dr4ke616/gospeedtest
+$ go get -d github.com/dr4ke616/gospeedtest
+$ cd github.com/dr4ke616/gospeedtest
+$ gomobile build . # will build an APK
 ```
 
+### Code usage
+To use gospeedtest as a library:
+```golang
+import (
+    ...
 
-## Problems
-Some reason gomobile doesnt like `net/http` and I get the following errors:
+    "github.com/dr4ke616/gospeedtest/nw_speedtest"
+)
+
+st := nw_speedtest.Speedtest{
+    FileLocation: "http://download.thinkbroadband.com/10MB.zip",
+    Verbos:       true,
+}
+result, err := st.Start()
 ```
-gomobile: type net/http.Request not defined in package package nw_speedtest ("github.com/dr4ke616/gospeedtest/nw_speedtest")
-type net/http.Request not defined in package package nw_speedtest ("github.com/dr4ke616/gospeedtest/nw_speedtest")
-type net/http.Client not defined in package package nw_speedtest ("github.com/dr4ke616/gospeedtest/nw_speedtest")
-```
-
-
-## TODO
-Either:
-- Fix or wait for a release to fix the issue with gomobile so i can complete the binding process
-- Understand OpenGL and print the results on the screen, without the need to bind to Android/iOS project
 
 
 ## Links

@@ -1,10 +1,4 @@
-// Copyright 2014 The Go Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style
-// license that can be found in the LICENSE file.
-
-// +build darwin linux
-
-// An app that draws a green triangle on a red background.
+// An app that displays the current interent speed for the device.
 //
 // Note: This demo is an early preview of Go 1.5. In order to build this
 // program as an Android APK using the gomobile tool.
@@ -13,8 +7,9 @@
 //
 // Get the basic example and use gomobile to build or install it on your device.
 //
-//   $ go get -d golang.org/x/mobile/example/basic
-//   $ gomobile build golang.org/x/mobile/example/basic # will build an APK
+//   $ go get -d github.com/dr4ke616/gospeedtest
+//   $ cd github.com/dr4ke616/gospeedtest
+//   $ gomobile build . # will build an APK
 //
 //   # plug your Android device to your computer or start an Android emulator.
 //   # if you have adb installed on your machine, use gomobile install to
