@@ -3,7 +3,7 @@ Simple internet speedtest written in Go for Android
 
 
 ## Go Speedtest
-1. Download go1.5beta2 [here](https://golang.org/dl/) to `/home/adam/Downloads/gobeta`
+1. Download go1.5beta2 [here](https://golang.org/dl/)
 
 2. Install Gomobile using go1.5beta2. This is a temp install of GoBeta, didnt want to mess up my current env
 ```bash
